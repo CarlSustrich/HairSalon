@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+@using System.Reflection;
+<h1>Details for @Model.Stylist.StylistName's Client</h1>
+
+@foreach (PropertyInfo p in ViewBag.Properties)
+{
+  <p>@p.Name: @p.GetValue(Model)</p>
+}

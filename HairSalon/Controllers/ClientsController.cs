@@ -23,7 +23,6 @@ public class ClientsController : Controller
     {
       ViewBag.Bool = false;
     }
-    ViewBag.TargetStylist = stylistId;
     ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName", new {value = stylistId});
     return View();
   }
@@ -34,5 +33,12 @@ public class ClientsController : Controller
     _db.Clients.Add(newClient);
     _db.SaveChanges();
     return RedirectToAction("Index", "Stylists");
+  }
+
+  public ActionResult Details(int clientId)
+  {
+    Client TargetClient = _db.Clients.Include(item => item.Stylist).FirstOrDefault(item => item.ClientId == clientId);
+    ViewBag.Properties = TargetClient.GetType().GetProperties();
+    return View(TargetClient);
   }
 }
