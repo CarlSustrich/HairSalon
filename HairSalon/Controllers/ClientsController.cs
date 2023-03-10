@@ -17,17 +17,22 @@ public class ClientsController : Controller
     _db = db;
   }
 
-  public ActionResult Create()
+  public ActionResult Create(int stylistId)
   {
     if(_db.Stylists.ToList().Count == 0)
     {
       ViewBag.Bool = false;
     }
-    else
-    {
-      ViewBag.Bool = true;
-    }
-    ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
+    ViewBag.TargetStylist = stylistId;
+    ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName", new {value = stylistId});
     return View();
+  }
+
+  [HttpPost]
+  public ActionResult Create(Client newClient)
+  {
+    _db.Clients.Add(newClient);
+    _db.SaveChanges();
+    return RedirectToAction("Index", "Stylists");
   }
 }
