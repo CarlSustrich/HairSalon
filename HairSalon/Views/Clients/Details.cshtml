@@ -6,5 +6,8 @@
 
 @foreach (PropertyInfo p in ViewBag.Properties)
 {
-  <p>@p.Name: @p.GetValue(Model)</p>
+  if(p.PropertyType.Name == "String")
+  {
+  <p>@p.Name: @p.GetValue(Model, null)</p>
+  }
 }
