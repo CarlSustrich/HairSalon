@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+@model HairSalon.Models.Client;
+
+<h2>Add a new Client</h2>
+
+@if(ViewBag.StylistId == 0)
+{
+  <p>Please add a Stylist before adding a Client</p>
+}
+@using (Html.BeginForm())
+{
+  <p>Client Name:</p>
+  @Html.TextBoxFor(model => model.ClientName)
+
+  <p>Stylist:</p>
+  @Html.DropDownList("StylistId")
+  <br>
+  <input type="submit" value="Add client">
+}
