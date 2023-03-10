@@ -12,9 +12,11 @@
     <meta charset='utf-8'>
   </head>
   <body>
-    @RenderBody()
-    <br>
-    <br>
-    @await Html.PartialAsync("NavButtons")
+    <div class='content'>
+      @RenderBody()
+      <br>
+      <br>
+      @await Html.PartialAsync("NavButtons")
+    </div>
   </body>
 </html>

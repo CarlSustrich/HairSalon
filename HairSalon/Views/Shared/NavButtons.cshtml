@@ -1,9 +1,14 @@
 <div id='navButtons'>
-  @Html.ActionLink("Add a new Stylist", "Create", "Stylists")
-  <br>
-  @Html.ActionLink("View all stylists", "Index", "Stylists")
-  <br>
-  @Html.ActionLink("Add new Client", "Create", "Clients")
-  <br>
-  @Html.ActionLink("Back Home", "Index", "Home")
+  <div class='navButtons'>
+    <button>@Html.ActionLink("Add a new Stylist", "Create", "Stylists")</button>
+  </div>
+  <div class='navButtons'>
+    <button>@Html.ActionLink("View all stylists", "Index", "Stylists")</button>
+  </div>
+  <div class='navButtons'>
+    <button>@Html.ActionLink("Add new Client", "Create", "Clients")</button>
+  </div>
+  <div class='navButtons'>
+    <button>@Html.ActionLink("Back Home", "Index", "Home")</button>
+  </div>
 </div>
