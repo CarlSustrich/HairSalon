@@ -18,7 +18,7 @@ public class StylistsController : Controller
 
   public ActionResult Index()
   {
-    List<Client> model = _db.Clients.ToList();
+    List<Stylist> model = _db.Stylists.ToList();
     return View(model);
   }
 
@@ -27,8 +27,14 @@ public class StylistsController : Controller
   [HttpPost]
   public ActionResult Create(Stylist newStylist)
   {
-    _db.Add(newStylist);
+    _db.Stylists.Add(newStylist);
     _db.SaveChanges();
     return RedirectToAction("Index");
+  }
+
+  public ActionResult Details(int stylistId)
+  {
+    Stylist targetStylist = _db.Stylists.Include(item => item.Clients).FirstOrDefault(item => item.StylistId == stylistId);
+    return View(targetStylist);
   }
 }
