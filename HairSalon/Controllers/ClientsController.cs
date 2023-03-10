@@ -19,6 +19,14 @@ public class ClientsController : Controller
 
   public ActionResult Create()
   {
+    if(_db.Stylists.ToList().Count == 0)
+    {
+      ViewBag.Bool = false;
+    }
+    else
+    {
+      ViewBag.Bool = true;
+    }
     ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
     return View();
   }

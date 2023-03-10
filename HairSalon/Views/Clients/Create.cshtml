@@ -3,19 +3,23 @@
 }
 @model HairSalon.Models.Client;
 
-<h2>Add a new Client</h2>
 
-@if(ViewBag.StylistId == 0)
+@if (ViewBag.Bool == false)
 {
-  <p>Please add a Stylist before adding a Client</p>
+  <p>Please Add a Stylist First</p>
 }
-@using (Html.BeginForm())
+else
 {
-  <p>Client Name:</p>
-  @Html.TextBoxFor(model => model.ClientName)
+  <h2>Add a new Client</h2>
 
-  <p>Stylist:</p>
-  @Html.DropDownList("StylistId")
-  <br>
-  <input type="submit" value="Add client">
+  @using (Html.BeginForm())
+  {
+    <h1>Client Name:</h1>
+    @Html.TextBoxFor(model => model.ClientName)
+
+    <p>Stylist:</p>
+    @Html.DropDownList("StylistId")
+    <br>
+    <input type="submit" value="Add client">
+  }
 }
