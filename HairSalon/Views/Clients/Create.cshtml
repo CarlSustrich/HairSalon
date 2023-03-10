@@ -11,18 +11,19 @@
 else
 {
   <h2>Add a new Client</h2>
+  <div class="form-control">
+    @using (Html.BeginForm())
+    {
+      <h1>Client Name:</h1>
+      @Html.TextBoxFor(model => model.ClientName)
 
-  @using (Html.BeginForm())
-  {
-    <h1>Client Name:</h1>
-    @Html.TextBoxFor(model => model.ClientName)
+      <h1>Hair Type:</h1>
+      @Html.TextBoxFor(model => model.HairType, new {placeholder = "ex wavy"})
 
-    <h1>Hair Type:</h1>
-    @Html.TextBoxFor(model => model.HairType)
-
-    <h1>Stylist:</h1>
-    @Html.DropDownList("StylistId")
-    <br>
-    <input type="submit" value="Add client">
-  }
+      <h1>Stylist:</h1>
+      @Html.DropDownList("StylistId")
+      <br>
+      <input type="submit" value="Add client">
+    }
+  </div>
 }

@@ -4,10 +4,12 @@
 @model HairSalon.Models.Stylist
 
 <h1>Add a new Stylist</h1>
-@using (Html.BeginForm())
-{
-  <p>Enter your Stylist's Name:</p>
-  @Html.TextBoxFor(model => model.StylistName)
-  <br>
-  <input type='submit' value='Add this Stylist'>
-}
+<div class="form-control">
+  @using (Html.BeginForm())
+  {
+    <p>Enter your Stylist's Name:</p>
+    @Html.TextBoxFor(model => model.StylistName)
+    <br>
+    <input type='submit' value='Add this Stylist'>
+  }
+</div>
