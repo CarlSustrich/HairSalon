@@ -1,7 +1,6 @@
 body {
-  display: flex;
   justify-content: center;
-  /* padding-top: 10vh; */
+  padding-top: 10vh;
   text-align: center;
   background-image: url("./../img/background.jpeg");
   background-attachment: fixed;
@@ -10,6 +9,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(184, 184, 184);
   min-height: 100vh;
+  margin-bottom: 10vh;
 }
 
 .content {
@@ -20,60 +20,97 @@ body {
 }
 
 .form-control {
-  
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+.form-control h3 {
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+input[type=submit] {
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgb(122, 122, 122, 0.8);
 }
 
 li a{
   text-decoration: none;
 }
 
+hr {
+  clear: both;
+  visibility: hidden;
+}
+
 h1{
   text-decoration: underline;
-  font-size: 6vw;
   padding: 5px;
-  display: block;
+  font-size: max(40px, 5vw);
+  display: inline;
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 15px;
 }
 
 h2{
+  
   padding: 5px;
+  font-size: max(35px, 4.5vw);
+  display: inline;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
 
 h3{
   padding: 5px;
+  font-size: max(30px, 4vw);
+  display: inline;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
 
 ul {
+  display: inline-block;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
+
+li {
+  font-size: max(25px, 3vw);
+}
+
+li a{
+  font-size: max(25px, 3vw);
+  color: black;
+  padding: 10px;
+}
+
 .navButtons a{
   text-decoration: none;
   color: white;
 }
 
 .navButtons:hover {
+  transition-duration: 0.8s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #navButtons {
+  display: block;
   overflow: hidden;
   position:sticky;
   width: 100%;
-  /* bottom: 10vh; */
-  /* right: 20vw; */
+  top: 100vh;
+  bottom: 2vh;
 }
-
-/* .navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-} */
 
 .navButtons{
   color: white;
@@ -81,12 +118,10 @@ ul {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size:calc(12px + 1.5vw);
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 10px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  background-color: rgb(122, 122, 122);
+  background-color: rgb(122, 122, 122, 0.8);
   min-width: 50px;
 }

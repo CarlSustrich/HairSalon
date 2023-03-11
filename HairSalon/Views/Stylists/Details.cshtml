@@ -5,18 +5,14 @@
 @model HairSalon.Models.Stylist
 @using HairSalon.Models
 
-<h1>Stylist Details</h1>
-<hr/>
-
-<h2>Stylist: @Html.DisplayFor(model => model.StylistName)</h2>
-
+<h1>@Html.DisplayFor(model => model.StylistName)'s Clients</h1>
+<hr>
 @if (@Model.Clients.Count == 0)
 {
   <h3>No Clients added for this Stylist =(</h3>
 }
 else
 {
-  <h3>Clients:</h3>
   <ul>
   @foreach (Client item in Model.Clients)
   {
@@ -24,4 +20,7 @@ else
   }
   </ul>
 }
-@Html.ActionLink("Add a client for this Stylist", "Create", "Clients", new { stylistId = Model.StylistId})
+<hr>
+<div class = 'navButtons'>
+  @Html.ActionLink("Add a client for this Stylist", "Create", "Clients", new { stylistId = Model.StylistId})
+</div>

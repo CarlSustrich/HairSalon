@@ -3,11 +3,13 @@
 }
 @using System.Reflection;
 <h1>Details for @Model.Stylist.StylistName's Client</h1>
-
+<hr>
+<ul>
 @foreach (PropertyInfo p in ViewBag.Properties)
 {
   if(p.PropertyType.Name == "String")
   {
-  <h3>@p.Name: @p.GetValue(Model, null)</h3>
+  <li>@p.Name: @p.GetValue(Model, null)</li>
   }
 }
+</ul>
