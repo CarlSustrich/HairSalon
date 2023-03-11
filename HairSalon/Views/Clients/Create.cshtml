@@ -14,13 +14,13 @@ else
   <div class="form-control">
     @using (Html.BeginForm())
     {
-      <h1>Client Name:</h1>
+      <h3>Client Name:</h3>
       @Html.TextBoxFor(model => model.ClientName)
 
-      <h1>Hair Type:</h1>
+      <h3>Hair Type:</h3>
       @Html.TextBoxFor(model => model.HairType, new {placeholder = "ex wavy"})
 
-      <h1>Stylist:</h1>
+      <h3>Stylist:</h3>
       @Html.DropDownList("StylistId")
       <br>
       <input type="submit" value="Add client">
